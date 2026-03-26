@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Brain Institute — Osteopatia i Kinezjologia Stosowana</title>
+  <meta name="description" content="Body Brain Institute — profesjonalne szkolenia z osteopatii i kinezjologii stosowanej. Dwa filary holistycznego podejścia do zdrowia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAWIGACJA -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-body">Body</span><span class="logo-brain">Brain</span>
+        <span class="logo-institute">Institute</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#szkolenia">Szkolenia</a></li>
+        <li><a href="prowadzacy.html">Prowadzący</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#kontakt" class="btn btn-nav">Zapisz się</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO — diagonal clip-path + hover expand
+       ============================================================ -->
+  <header class="hero" id="hero">
+    <div class="hero-split">
+      <!-- CIAŁO — lewa, ciepła -->
+      <div class="hero-panel hero-body" id="heroBody">
+        <canvas class="hero-canvas" id="veinsCanvas"></canvas>
+        <div class="hero-panel-content">
+          <span class="hero-label">Osteopatia</span>
+          <h1>Ciało<span class="dot-warm">.</span></h1>
+          <p>Holistyczne podejście do diagnostyki i terapii manualnej. Techniki strukturalne, trzewne i czaszkowo-krzyżowe.</p>
+          <a href="#szkolenia" class="btn btn-hero-body">Szkolenia z osteopatii</a>
+        </div>
+      </div>
+      <!-- MÓZG — prawa, matrix -->
+      <div class="hero-panel hero-brain" id="heroBrain">
+        <canvas class="hero-canvas" id="matrixCanvas"></canvas>
+        <div class="hero-panel-content hero-panel-content-right">
+          <span class="hero-label">Kinezjologia stosowana</span>
+          <h1>Mózg<span class="dot-cool">.</span></h1>
+          <p>Diagnostyka funkcjonalna oparta na testach mięśniowych. Integracja układu nerwowego, strukturalnego i biochemicznego.</p>
+          <a href="#szkolenia" class="btn btn-hero-brain">Szkolenia z kinezjologii</a>
+        </div>
+      </div>
+    </div>
+    <!-- SVG fala na dole hero -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C360,120 720,40 1080,80 C1260,100 1380,60 1440,70 L1440,120 L0,120 Z" fill="#f5f2ed"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       O NAS
+       ============================================================ -->
+  <section class="section about" id="o-nas">
+    <div class="container">
+      <div class="section-header-center">
+        <p class="section-tag">O instytucie</p>
+        <h2 class="section-title">Dwa filary. Jedno podejście.</h2>
+        <p class="section-sub">Body Brain Institute łączy osteopatię z kinezjologią stosowaną -- kompleksowy system diagnostyki i terapii.</p>
+      </div>
+
+      <div class="about-dual">
+        <div class="about-card about-card-body">
+          <div class="about-card-accent"></div>
+          <h3>Osteopatia</h3>
+          <p>
+            Osteopatia postrzega ciało jako jedną funkcjonalną całość. Poprzez techniki strukturalne,
+            trzewne i czaszkowo-krzyżowe przywracamy równowagę organizmu. Program oparty na
+            Osteopathie Schule Deutschland.
+          </p>
+          <ul class="feature-list fl-body">
+            <li>Terapia strukturalna</li>
+            <li>Terapia trzewna (visceral)</li>
+            <li>Terapia czaszkowo-krzyżowa</li>
+            <li>Diagnostyka osteopatyczna</li>
+          </ul>
+        </div>
+        <div class="about-card about-card-brain">
+          <div class="about-card-accent"></div>
+          <h3>Kinezjologia stosowana</h3>
+          <p>
+            Applied Kinesiology wykorzystuje testy mięśniowe jako narzędzie diagnostyczne.
+            Identyfikujemy dysfunkcje w triadzie zdrowia: strukturze, chemii i psychice.
+          </p>
+          <ul class="feature-list fl-brain">
+            <li>Testy mięśniowe</li>
+            <li>Triada zdrowia</li>
+            <li>Korekty neuromięśniowe</li>
+            <li>Diagnostyka funkcjonalna</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><span class="stat-number">16+</span><span class="stat-label">lat doświadczenia</span></div>
+        <div class="stat"><span class="stat-number">500+</span><span class="stat-label">przeszkolonych terapeutów</span></div>
+        <div class="stat"><span class="stat-number">2</span><span class="stat-label">filary terapeutyczne</span></div>
+        <div class="stat"><span class="stat-number">100%</span><span class="stat-label">praktyki warsztatowej</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FALA: about → szkolenia -->
+  <div class="wave-divider wave-to-dark">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,40 C240,100 480,0 720,50 C960,100 1200,20 1440,60 L1440,100 L0,100 Z" />
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       SZKOLENIA — ciemne tło, split content
+       ============================================================ -->
+  <section class="section trainings" id="szkolenia">
+    <div class="container">
+      <div class="section-header-center section-header-light">
+        <p class="section-tag section-tag-light">Oferta szkoleniowa</p>
+        <h2 class="section-title" style="color:#fff">Szkolenia i kursy</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.6)">Wybierz swoją ścieżkę rozwoju.</p>
+      </div>
+
+      <div class="courses-split">
+        <!-- OSTEOPATIA -->
+        <div class="courses-column">
+          <div class="col-header">
+            <span class="col-icon col-icon-body">O</span>
+            <h3>Osteopatia</h3>
+          </div>
+          <div class="card card-dark card-body-accent">
+            <h4>Osteopatia kliniczna</h4>
+            <p>Kompleksowe szkolenie: diagnostyka osteopatyczna, techniki strukturalne, trzewne i czaszkowo-krzyżowe.</p>
+            <ul class="card-details">
+              <li>4 semestry &middot; weekendowo</li>
+              <li>Poziom: zaawansowany</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-card-body">Zapytaj o termin</a>
+          </div>
+          <div class="card card-dark card-body-accent">
+            <h4>Terapia trzewna i czaszkowo-krzyżowa</h4>
+            <p>Visceral i craniosacral -- diagnostyka i terapia dysfunkcji trzewnych oraz praca z rytmem czaszkowo-krzyżowym.</p>
+            <ul class="card-details">
+              <li>3 dni &middot; intensywnie</li>
+              <li>Poziom: średniozaawansowany</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-card-body">Zapytaj o termin</a>
+          </div>
+        </div>
+        <!-- KINEZJOLOGIA -->
+        <div class="courses-column">
+          <div class="col-header">
+            <span class="col-icon col-icon-brain">K</span>
+            <h3>Kinezjologia stosowana</h3>
+          </div>
+          <div class="card card-dark card-brain-accent">
+            <h4>Kinezjologia stosowana -- kurs podstawowy</h4>
+            <p>Wprowadzenie do Applied Kinesiology. Testy mięśniowe, triada zdrowia, diagnostyka funkcjonalna.</p>
+            <ul class="card-details">
+              <li>3 dni &middot; warsztatowo</li>
+              <li>Poziom: podstawowy</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-card-brain">Zapytaj o termin</a>
+          </div>
+          <div class="card card-dark card-brain-accent">
+            <h4>Kinezjologia stosowana -- kurs zaawansowany</h4>
+            <p>Zaawansowane techniki korekcyjne, integracja z terapią manualną, praca z układem nerwowym.</p>
+            <ul class="card-details">
+              <li>4 dni &middot; intensywnie</li>
+              <li>Poziom: zaawansowany</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-card-brain">Zapytaj o termin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FALA: szkolenia → prowadzący -->
+  <div class="wave-divider wave-to-light">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,60 C360,10 720,90 1080,30 C1260,10 1380,50 1440,40 L1440,100 L0,100 Z" />
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       PROWADZĄCY
+       ============================================================ -->
+  <section class="section" id="prowadzacy">
+    <div class="container">
+      <div class="section-header-center">
+        <p class="section-tag">Zespół</p>
+        <h2 class="section-title">Prowadzący</h2>
+        <p class="section-sub">Praktycy z wieloletnim doświadczeniem klinicznym i akademickim.</p>
+      </div>
+
+      <div class="instructors-row">
+        <div class="instructor-card ic-body">
+          <div class="ic-accent"></div>
+          <div class="instructor-photo ph-body"><span>HR</span></div>
+          <h3>dr Henryk Racheniuk</h3>
+          <p class="instructor-title">Specjalista fizjoterapii &middot; Osteopata D.O.</p>
+          <p class="instructor-excerpt">
+            Fizjoterapeuta z ponad 16-letnim doświadczeniem. Absolwent Osteopathie Schule Deutschland.
+            Doktor nauk o zdrowiu (AWF Wrocław). Wykładowca Politechniki Opolskiej.
+          </p>
+          <div class="instructor-tags">
+            <span class="tag tag-body">Osteopatia</span>
+            <span class="tag tag-body">Craniosacral</span>
+            <span class="tag tag-body">Visceral</span>
+          </div>
+          <a href="prowadzacy-henryk-racheniuk.html" class="read-more rm-body">Czytaj więcej &rarr;</a>
+        </div>
+
+        <div class="instructor-card ic-brain ic-placeholder">
+          <div class="ic-accent"></div>
+          <div class="instructor-photo ph-brain"><span>?</span></div>
+          <h3>Wkrótce</h3>
+          <p class="instructor-title">Kinezjologia stosowana</p>
+          <p class="instructor-excerpt">Informacje o drugim prowadzącym pojawią się wkrótce.</p>
+          <div class="instructor-tags">
+            <span class="tag tag-brain">Kinezjologia stosowana</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:36px;">
+        <a href="prowadzacy.html" class="btn btn-primary">Wszyscy prowadzący</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG
+       ============================================================ -->
+  <section class="section blog" id="blog">
+    <div class="container">
+      <div class="section-header-center">
+        <p class="section-tag">Blog</p>
+        <h2 class="section-title">Wiedza i inspiracje</h2>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card-img ph-img-body"><span>Osteopatia</span></div>
+          <div class="blog-card-body"><span class="blog-date">20 marca 2026</span><h3><a href="blog.html">Czym jest osteopatia? Kompletny przewodnik</a></h3><p>Holistyczne podejście, które traktuje ciało jako jedną funkcjonalną całość.</p></div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img ph-img-brain"><span>Kinezjologia</span></div>
+          <div class="blog-card-body"><span class="blog-date">14 marca 2026</span><h3><a href="blog.html">Kinezjologia stosowana -- czym jest test mięśniowy?</a></h3><p>Fundament diagnostyczny Applied Kinesiology. Jak działa i co nam mówi?</p></div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img ph-img-dual"><span>Body &amp; Brain</span></div>
+          <div class="blog-card-body"><span class="blog-date">5 marca 2026</span><h3><a href="blog.html">Dlaczego holistyczne podejście daje lepsze rezultaty?</a></h3><p>Integracja osteopatii i kinezjologii w praktyce klinicznej.</p></div>
+        </article>
+      </div>
+      <div class="blog-cta"><a href="blog.html" class="btn btn-primary">Wszystkie artykuły</a></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTAKT
+       ============================================================ -->
+  <section class="section contact" id="kontakt">
+    <div class="container">
+      <div class="section-header-center">
+        <p class="section-tag">Kontakt</p>
+        <h2 class="section-title">Zapisz się na szkolenie</h2>
+        <p class="section-sub">Masz pytania lub chcesz zarezerwować miejsce? Napisz do nas.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Imię i nazwisko</label><input type="text" id="name" name="name" required placeholder="Jan Kowalski"></div>
+            <div class="form-group"><label for="email">Adres e-mail</label><input type="email" id="email" name="email" required placeholder="jan@example.com"></div>
+          </div>
+          <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone" placeholder="+48 000 000 000"></div>
+          <div class="form-group">
+            <label for="training">Interesujące szkolenie</label>
+            <select id="training" name="training">
+              <option value="">Wybierz szkolenie...</option>
+              <optgroup label="Osteopatia"><option value="osteopatia-kliniczna">Osteopatia kliniczna</option><option value="trzewna-cranio">Terapia trzewna i czaszkowo-krzyżowa</option></optgroup>
+              <optgroup label="Kinezjologia stosowana"><option value="kinez-podstawowy">Kurs podstawowy</option><option value="kinez-zaawansowany">Kurs zaawansowany</option></optgroup>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Wiadomość</label><textarea id="message" name="message" rows="4" placeholder="Twoje pytanie lub uwagi..."></textarea></div>
+          <button type="submit" class="btn btn-primary btn-submit">Wyślij wiadomość</button>
+        </form>
+        <div class="contact-info">
+          <div class="info-item"><h4>Lokalizacja</h4><p>Opole / Kluczbork</p></div>
+          <div class="info-item"><h4>E-mail</h4><p><a href="mailto:kontakt@bodybraininstitute.pl">kontakt@bodybraininstitute.pl</a></p></div>
+          <div class="info-item"><h4>Telefon</h4><p><a href="tel:+48000000000">+48 000 000 000</a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOPKA -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-body">Body</span><span class="logo-brain">Brain</span><span class="logo-institute">Institute</span></a>
+        <p>Profesjonalne szkolenia z osteopatii i kinezjologii stosowanej.</p>
+      </div>
+      <div class="footer-links"><h4>Nawigacja</h4><ul><li><a href="#o-nas">O nas</a></li><li><a href="#szkolenia">Szkolenia</a></li><li><a href="prowadzacy.html">Prowadzący</a></li><li><a href="blog.html">Blog</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+      <div class="footer-links"><h4>Szkolenia</h4><ul><li><a href="#szkolenia">Osteopatia kliniczna</a></li><li><a href="#szkolenia">Terapia trzewna i craniosacral</a></li><li><a href="#szkolenia">Kinezjologia -- kurs podstawowy</a></li><li><a href="#szkolenia">Kinezjologia -- kurs zaawansowany</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>&copy; 2026 Body Brain Institute. Wszelkie prawa zastrzeżone.</p><p class="forged-by">Forged by <a href="https://cyberdemigods.com" target="_blank" rel="noopener">CyberDemigods</a></p></div></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
