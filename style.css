@@ -453,12 +453,13 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 900px) {
-  .hero { min-height: 100vh; }
-  .hero-split { flex-direction: column; min-height: 100vh; }
-  .hero-panel { min-height: 50vh; align-items: flex-start; }
+  .hero { min-height: 100vh; min-height: 100svh; }
+  .hero-split { flex-direction: column; min-height: 100vh; min-height: 100svh; }
+  .hero-panel { min-height: auto; align-items: flex-start; flex: 1; }
   .hero-body, .hero-brain { width: 100% !important; }
-  .hero-body { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); margin-right: 0; margin-bottom: -8%; }
-  .hero-panel-content, .hero-panel-content-right { padding: 80px 32px 40px; max-width: 100%; margin: 0; }
+  .hero-body { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); margin-right: 0; margin-bottom: -5%; }
+  .hero-panel-content { padding: 72px 28px 50px; max-width: 100%; margin: 0; }
+  .hero-panel-content-right { padding: 32px 28px 40px; max-width: 100%; margin: 0; }
 
   .about-dual { grid-template-columns: 1fr; }
   .courses-split { grid-template-columns: 1fr; }
@@ -481,9 +482,10 @@ img { max-width: 100%; display: block; }
     transform: translateY(-120%); transition: transform var(--transition);
   }
   .nav-links.active { transform: translateY(0); }
-  .hero-panel-content, .hero-panel-content-right { padding: 50px 24px 30px; text-align: center; }
+  .hero-panel-content { padding: 64px 24px 40px; text-align: center; }
+  .hero-panel-content-right { padding: 24px 24px 32px; text-align: center; }
   .hero-panel p { margin-left: auto; margin-right: auto; }
-  .hero-panel h1 { font-size: 2.4rem; }
+  .hero-panel h1 { font-size: 2rem; }
   .form-row { grid-template-columns: 1fr; }
   .blog-list-item { grid-template-columns: 1fr; }
   .blog-list-img { min-height: 150px; }
