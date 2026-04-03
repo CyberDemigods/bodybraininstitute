@@ -15,6 +15,7 @@ if (navToggle && navLinks) {
   const brain = document.querySelector('.hero-brain');
   if (!body || !brain) return;
 
+  const OVERLAP = 8;    // body margin-right: -8%
   const DEFAULT = 55;   // body domyślnie 55%
   const EXPAND  = 62;   // rozszerzony panel
   const SHRINK  = 38;   // skurczony panel
@@ -29,7 +30,7 @@ if (navToggle && navLinks) {
     if (Math.abs(target - current) < 0.05) current = target;
 
     body.style.width = current + '%';
-    brain.style.width = (100 - current) + '%';
+    brain.style.width = (100 - current + OVERLAP) + '%';
 
     if (current !== target) {
       raf = requestAnimationFrame(animate);
@@ -51,7 +52,7 @@ if (navToggle && navLinks) {
 
   // init
   body.style.width = DEFAULT + '%';
-  brain.style.width = (100 - DEFAULT) + '%';
+  brain.style.width = (100 - DEFAULT + OVERLAP) + '%';
 })();
 
 // ===== FORM MOCK =====
