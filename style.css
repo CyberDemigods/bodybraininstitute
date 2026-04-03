@@ -127,6 +127,8 @@ img { max-width: 100%; display: block; }
 .hero-brain {
   background: var(--brain-deep);
   z-index: 1;
+  margin-left: -10%;
+  padding-left: 10%;
 }
 
 .hero-bg-img {
