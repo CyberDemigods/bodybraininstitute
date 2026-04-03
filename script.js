@@ -15,7 +15,6 @@ if (navToggle && navLinks) {
   const brain = document.querySelector('.hero-brain');
   if (!body || !brain) return;
 
-  const OVERLAP = 8;    // body margin-right: -8%
   const DEFAULT = 55;   // body domyślnie 55%
   const EXPAND  = 62;   // rozszerzony panel
   const SHRINK  = 38;   // skurczony panel
@@ -25,12 +24,19 @@ if (navToggle && navLinks) {
   let current = DEFAULT;
   let raf = null;
 
+  function apply(bodyPct) {
+    // Body w flow (clip-path + margin-right:-8% obsługuje overlap)
+    body.style.width = bodyPct + '%';
+    // Brain absolutny od prawej, pokrywa resztę + zachodzi pod diagonalę body
+    // body zajmuje bodyPct% ale margin-right:-8% przesuwa granicę, więc brain sięga od ~(bodyPct-8-5)% do 100%
+    brain.style.width = (100 - bodyPct + 13) + '%';
+  }
+
   function animate() {
     current += (target - current) * SPEED;
     if (Math.abs(target - current) < 0.05) current = target;
 
-    body.style.width = current + '%';
-    brain.style.width = (100 - current + OVERLAP) + '%';
+    apply(current);
 
     if (current !== target) {
       raf = requestAnimationFrame(animate);
@@ -51,8 +57,7 @@ if (navToggle && navLinks) {
   if (split) split.addEventListener('mouseleave', () => setTarget(DEFAULT));
 
   // init
-  body.style.width = DEFAULT + '%';
-  brain.style.width = (100 - DEFAULT + OVERLAP) + '%';
+  apply(DEFAULT);
 })();
 
 // ===== FORM MOCK =====
