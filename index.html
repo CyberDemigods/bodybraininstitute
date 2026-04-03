@@ -40,6 +40,8 @@
     <div class="hero-split">
       <!-- CIAŁO — lewa, ciepła -->
       <div class="hero-panel hero-body" id="heroBody">
+        <img src="img/hero-body.jpg" alt="" class="hero-bg-img">
+        <div class="hero-bg-overlay hero-bg-overlay-body"></div>
         <canvas class="hero-canvas" id="veinsCanvas"></canvas>
         <div class="hero-panel-content">
           <span class="hero-label">Osteopatia</span>
@@ -50,6 +52,8 @@
       </div>
       <!-- MÓZG — prawa, matrix -->
       <div class="hero-panel hero-brain" id="heroBrain">
+        <img src="img/hero-brain.jpg" alt="" class="hero-bg-img">
+        <div class="hero-bg-overlay hero-bg-overlay-brain"></div>
         <canvas class="hero-canvas" id="matrixCanvas"></canvas>
         <div class="hero-panel-content hero-panel-content-right">
           <span class="hero-label">Kinezjologia stosowana</span>
@@ -111,10 +115,20 @@
       </div>
 
       <div class="stats-row">
-        <div class="stat"><span class="stat-number">16+</span><span class="stat-label">lat doświadczenia</span></div>
-        <div class="stat"><span class="stat-number">500+</span><span class="stat-label">przeszkolonych terapeutów</span></div>
-        <div class="stat"><span class="stat-number">2</span><span class="stat-label">filary terapeutyczne</span></div>
-        <div class="stat"><span class="stat-number">100%</span><span class="stat-label">praktyki warsztatowej</span></div>
+        <div class="stat"><span class="stat-number" data-target="16" data-suffix="+">0</span><span class="stat-label">lat doświadczenia</span></div>
+        <div class="stat"><span class="stat-number" data-target="500" data-suffix="+">0</span><span class="stat-label">przeszkolonych terapeutów</span></div>
+        <div class="stat"><span class="stat-number" data-target="2" data-suffix="">0</span><span class="stat-label">filary terapeutyczne</span></div>
+        <div class="stat"><span class="stat-number" data-target="100" data-suffix="%">0</span><span class="stat-label">praktyki warsztatowej</span></div>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="trust-bar">
+        <p class="trust-label">Współpracujemy z</p>
+        <div class="trust-logos">
+          <span class="trust-logo">AWF Wrocław</span>
+          <span class="trust-logo">Osteopathie Schule Deutschland</span>
+          <span class="trust-logo">Politechnika Opolska</span>
+        </div>
       </div>
     </div>
   </section>
@@ -247,6 +261,22 @@
   </section>
 
   <!-- ============================================================
+       CYTAT
+       ============================================================ -->
+  <section class="section quote-section">
+    <div class="container">
+      <blockquote class="featured-quote">
+        <span class="quote-mark">&ldquo;</span>
+        <p>Ciało jest jednością funkcjonalną. Nie leczymy objawów -- szukamy przyczyny. Osteopatia i kinezjologia stosowana dają nam narzędzia, by spojrzeć na pacjenta całościowo.</p>
+        <footer>
+          <strong>dr Henryk Racheniuk</strong>
+          <span>Specjalista fizjoterapii &middot; Osteopata D.O.</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============================================================
        BLOG
        ============================================================ -->
   <section class="section blog" id="blog">
@@ -257,15 +287,15 @@
       </div>
       <div class="blog-grid">
         <article class="blog-card">
-          <div class="blog-card-img ph-img-body"><span>Osteopatia</span></div>
+          <div class="blog-card-img"><img src="img/blog-osteo.jpg" alt="Kręg szyjny — osteopatia"></div>
           <div class="blog-card-body"><span class="blog-date">20 marca 2026</span><h3><a href="blog.html">Czym jest osteopatia? Kompletny przewodnik</a></h3><p>Holistyczne podejście, które traktuje ciało jako jedną funkcjonalną całość.</p></div>
         </article>
         <article class="blog-card">
-          <div class="blog-card-img ph-img-brain"><span>Kinezjologia</span></div>
+          <div class="blog-card-img"><img src="img/blog-kinez.jpg" alt="Połączenia neuronowe — kinezjologia"></div>
           <div class="blog-card-body"><span class="blog-date">14 marca 2026</span><h3><a href="blog.html">Kinezjologia stosowana -- czym jest test mięśniowy?</a></h3><p>Fundament diagnostyczny Applied Kinesiology. Jak działa i co nam mówi?</p></div>
         </article>
         <article class="blog-card">
-          <div class="blog-card-img ph-img-dual"><span>Body &amp; Brain</span></div>
+          <div class="blog-card-img"><img src="img/blog-holistic.jpg" alt="Holistyczne podejście do zdrowia"></div>
           <div class="blog-card-body"><span class="blog-date">5 marca 2026</span><h3><a href="blog.html">Dlaczego holistyczne podejście daje lepsze rezultaty?</a></h3><p>Integracja osteopatii i kinezjologii w praktyce klinicznej.</p></div>
         </article>
       </div>

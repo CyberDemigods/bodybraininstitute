@@ -67,23 +67,65 @@ if (form) {
   });
 }
 
-// ===== SCROLL REVEAL =====
+// ===== STAGGERED SCROLL REVEAL =====
+const staggerGroups = [
+  '.about-dual .about-card',
+  '.courses-column .card-dark',
+  '.stats-row .stat',
+  '.blog-grid .blog-card',
+  '.instructors-row .instructor-card',
+  '.instructors-list .instructor-card-full',
+];
+staggerGroups.forEach(selector => {
+  const items = document.querySelectorAll(selector);
+  if (!items.length) return;
+  items.forEach((el, i) => {
+    el.classList.add('reveal-stagger');
+    el.style.transitionDelay = (i * 150) + 'ms';
+  });
+});
+// Also reveal single elements
+document.querySelectorAll('.featured-quote, .trust-bar').forEach(el => {
+  el.classList.add('reveal-stagger');
+});
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('revealed');
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.about-card, .card-dark, .stat, .blog-card, .instructor-card, .instructor-card-full').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  revealObserver.observe(el);
-});
+document.querySelectorAll('.reveal-stagger').forEach(el => revealObserver.observe(el));
+
+// ===== ANIMATED STAT COUNTERS =====
+const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(el => counterObserver.observe(el));
 
 // ===== MATRIX RAIN — ambient, slow =====
 function initMatrix(canvasId) {
